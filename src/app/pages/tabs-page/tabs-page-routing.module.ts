@@ -10,7 +10,7 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'schedule',
+        path: 'home',
         children: [
           {
             path: '',
@@ -23,11 +23,15 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'speakers',
+        path: 'data',
         children: [
           {
             path: '',
             loadChildren: () => import('../speaker-list/speaker-list.module').then(m => m.SpeakerListModule)
+          },
+          {
+            path: 'form-submit',
+            loadChildren: () => import('../form-submit/form-submit.module').then(m => m.FormSubmitPageModule)
           },
           {
             path: 'session/:sessionId',
@@ -40,7 +44,7 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'map',
+        path: 'nfc',
         children: [
           {
             path: '',

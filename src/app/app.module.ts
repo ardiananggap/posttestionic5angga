@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
+import { NFC, Ndef } from '@ionic-native/nfc/ngx';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     IonicModule.forRoot(),
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot(),    
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     })

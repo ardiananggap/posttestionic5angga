@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Form Submit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Lokasi Tinggal</ion-label>
+      <ion-input [(ngModel)]="nama_kategori" placeholder="Nama Kategori"></ion-input>
+      <ion-input [(ngModel)]="path_gambar" placeholder="Path Gambar"></ion-input>
+    </ion-item>
+  </ion-list>
+  
+  <section>
+    <ion-button color="success" expand="block" (click)="submitForm()" >Submit</ion-button>
+  </section>
+</ion-content>

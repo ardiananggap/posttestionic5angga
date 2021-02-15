@@ -57,9 +57,18 @@ export class AccountPage implements AfterViewInit {
   }
 
   getUsername() {
-    this.userData.getUsername().then((username) => {
-      this.username = username;
+    this.userData.isLoggedIn().then((value) => {
+      if(value)
+      {
+        this.userData.getUsername().then((username) => {
+          this.username = username;
+        });
+      }
+      else{
+        this.router.navigateByUrl('/login');
+      }
     });
+    
   }
 
   changePassword() {

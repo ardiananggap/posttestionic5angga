@@ -27,11 +27,23 @@ export class LoginPage {
 
     if (form.valid) {
       this.userData.login(this.login.username);
-      this.router.navigateByUrl('/app/tabs/schedule');
+      this.router.navigateByUrl('/app/tabs/home');
     }
   }
 
   onSignup() {
     this.router.navigateByUrl('/signup');
+  }
+
+  ionViewDidEnter() {
+    this.userData.isLoggedIn().then((value) => {
+      if(value)
+      {
+        this.router.navigateByUrl('/app/tabs/home');
+      }
+      else{
+        this.router.navigateByUrl('/login');
+      }
+    });
   }
 }
